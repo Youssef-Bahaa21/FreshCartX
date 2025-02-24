@@ -2,11 +2,11 @@
   class="min-h-screen bg-gradient-to-br from-purple-950 via-purple-900 to-purple-800 flex items-center justify-center p-4"
 >
   <div
-    class="w-full max-w-md space-y-8 rounded-3xl bg-black/30 backdrop-blur-lg p-10 shadow-2xl shadow-purple-950/40 border border-purple-700/50 transition-all duration-300 hover:shadow-3xl hover:shadow-purple-950/60"
+    class="w-full max-w-md sm:max-w-lg lg:max-w-xl space-y-8 rounded-3xl bg-black/30 backdrop-blur-lg p-6 md:p-10 shadow-2xl shadow-purple-950/40 border border-purple-700/50 transition-all duration-300 hover:shadow-3xl hover:shadow-purple-950/60"
   >
     <div class="text-center">
       <h1
-        class="text-4xl font-extrabold text-transparent bg-gradient-to-r from-purple-300 to-purple-100 bg-clip-text mb-2"
+        class="text-3xl md:text-4xl font-extrabold text-transparent bg-gradient-to-r from-purple-300 to-purple-100 bg-clip-text mb-4"
       >
         {{ "register.title" | translate }}
       </h1>
@@ -18,8 +18,9 @@
       class="space-y-6"
     >
       <div class="space-y-4">
+        <!-- Full Name Field -->
         <div>
-          @let name=registerForm.get('name');
+          @let name = registerForm.get('name');
           <label class="mb-2 block text-sm font-medium text-purple-200">
             {{ "register.fullName" | translate }}
           </label>
@@ -28,7 +29,7 @@
               formControlName="name"
               type="text"
               [placeholder]="'register.fullNamePlaceholder' | translate"
-              class="w-full rounded-xl border border-purple-600/50 bg-black/40 p-4 text-purple-100 shadow-inner transition-all duration-300 placeholder:text-purple-400 focus:focus:ring-2 focus:ring-purple-400/20"
+              class="w-full rounded-xl border border-purple-600/50 bg-black/40 p-3 md:p-4 text-purple-100 shadow-inner transition-all duration-300 placeholder:text-purple-400 focus:ring-2 focus:ring-purple-400/20"
             />
           </div>
           @if (registerForm.get('name')?.errors && name?.touched) {
@@ -45,8 +46,9 @@
           }
         </div>
 
+        <!-- Email Field -->
         <div>
-          @let email=registerForm.get('email');
+          @let email = registerForm.get('email');
           <label class="mb-2 block text-sm font-medium text-purple-200">
             {{ "register.email" | translate }}
           </label>
@@ -55,7 +57,7 @@
               formControlName="email"
               type="email"
               [placeholder]="'register.emailPlaceholder' | translate"
-              class="w-full rounded-xl border border-purple-600/50 bg-black/40 p-4 text-purple-100 shadow-inner transition-all duration-300 placeholder:text-purple-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20"
+              class="w-full rounded-xl border border-purple-600/50 bg-black/40 p-3 md:p-4 text-purple-100 shadow-inner transition-all duration-300 placeholder:text-purple-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20"
             />
           </div>
           @if (email?.errors && email?.touched) {
@@ -71,8 +73,9 @@
           }
         </div>
 
+        <!-- Password Field -->
         <div>
-          @let password=registerForm.get('password');
+          @let password = registerForm.get('password');
           <label class="mb-2 block text-sm font-medium text-purple-200">
             {{ "register.password" | translate }}
           </label>
@@ -81,7 +84,7 @@
               formControlName="password"
               type="password"
               [placeholder]="'register.passwordPlaceholder' | translate"
-              class="w-full rounded-xl border border-purple-600/50 bg-black/40 p-4 text-purple-100 shadow-inner transition-all duration-300 placeholder:text-purple-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20"
+              class="w-full rounded-xl border border-purple-600/50 bg-black/40 p-3 md:p-4 text-purple-100 shadow-inner transition-all duration-300 placeholder:text-purple-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20"
             />
           </div>
           @if (password?.errors && password?.touched) {
@@ -97,6 +100,7 @@
           }
         </div>
 
+        <!-- Confirm Password Field -->
         <div>
           <label class="mb-2 block text-sm font-medium text-purple-200">
             {{ "register.confirmPassword" | translate }}
@@ -106,7 +110,7 @@
               formControlName="rePassword"
               type="password"
               [placeholder]="'register.confirmPasswordPlaceholder' | translate"
-              class="w-full rounded-xl border border-purple-600/50 bg-black/40 p-4 text-purple-100 shadow-inner transition-all duration-300 placeholder:text-purple-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20"
+              class="w-full rounded-xl border border-purple-600/50 bg-black/40 p-3 md:p-4 text-purple-100 shadow-inner transition-all duration-300 placeholder:text-purple-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20"
             />
           </div>
           @if (registerForm.getError('mismatch') &&
@@ -119,6 +123,7 @@
           }
         </div>
 
+        <!-- Phone Field -->
         <div>
           @let phone = registerForm.get('phone');
           <label class="mb-2 block text-sm font-medium text-purple-200">
@@ -130,7 +135,7 @@
               type="tel"
               [placeholder]="'register.phonePlaceholder' | translate"
               pattern="\d{10,15}"
-              class="w-full rounded-xl border border-purple-600/50 bg-black/40 p-4 text-purple-100 shadow-inner transition-all duration-300 placeholder:text-purple-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20"
+              class="w-full rounded-xl border border-purple-600/50 bg-black/40 p-3 md:p-4 text-purple-100 shadow-inner transition-all duration-300 placeholder:text-purple-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20"
             />
           </div>
           @if (phone?.errors && phone?.touched) {
@@ -150,7 +155,7 @@
       <button
         [disabled]="registerForm.invalid"
         type="submit"
-        class="w-full rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 px-6 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:from-purple-400 hover:to-purple-500 hover:shadow-xl focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-70"
+        class="w-full rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 px-6 py-3 md:py-4 text-sm md:text-base font-semibold text-white shadow-lg transition-all duration-300 hover:from-purple-400 hover:to-purple-500 hover:shadow-xl focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-70"
       >
         {{ "register.registerButton" | translate }}
       </button>

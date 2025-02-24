@@ -2,11 +2,11 @@
   class="min-h-screen bg-gradient-to-br from-purple-950 via-purple-900 to-purple-800 flex items-center justify-center p-4"
 >
   <div
-    class="w-full max-w-md space-y-8 rounded-3xl bg-black/30 backdrop-blur-lg p-10 shadow-2xl shadow-purple-950/40 border border-purple-700/50 transition-all duration-300 hover:shadow-3xl hover:shadow-purple-950/60"
+    class="w-full max-w-md sm:max-w-lg lg:max-w-xl space-y-8 rounded-3xl bg-black/30 backdrop-blur-lg p-6 md:p-10 shadow-2xl shadow-purple-950/40 border border-purple-700/50 transition-all duration-300 hover:shadow-3xl hover:shadow-purple-950/60"
   >
     <div class="text-center">
       <h1
-        class="text-4xl font-extrabold text-transparent bg-gradient-to-r from-purple-300 to-purple-100 bg-clip-text mb-2"
+        class="text-3xl md:text-4xl font-extrabold text-transparent bg-gradient-to-r from-purple-300 to-purple-100 bg-clip-text mb-4"
       >
         {{ "login.title" | translate }}
       </h1>
@@ -24,7 +24,7 @@
               formControlName="email"
               type="email"
               [placeholder]="'login.emailPlaceholder' | translate"
-              class="w-full rounded-xl border border-purple-600/50 bg-black/40 p-4 text-purple-100 shadow-inner transition-all duration-300 placeholder:text-purple-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20"
+              class="w-full rounded-xl border border-purple-600/50 bg-black/40 p-3 md:p-4 text-purple-100 shadow-inner transition-all duration-300 placeholder:text-purple-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20"
             />
           </div>
           @if (email?.errors && email?.touched) {
@@ -48,7 +48,7 @@
               formControlName="password"
               type="password"
               [placeholder]="'login.passwordPlaceholder' | translate"
-              class="w-full rounded-xl border border-purple-600/50 bg-black/40 p-4 text-purple-100 shadow-inner transition-all duration-300 placeholder:text-purple-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20"
+              class="w-full rounded-xl border border-purple-600/50 bg-black/40 p-3 md:p-4 text-purple-100 shadow-inner transition-all duration-300 placeholder:text-purple-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20"
             />
           </div>
           @if (password?.errors && password?.touched) {
@@ -63,7 +63,7 @@
         </div>
       </div>
 
-      <div class="flex items-center justify-between">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-2">
         <a
           routerLink="/forget"
           class="text-sm font-medium text-purple-300 transition hover:text-purple-200 hover:underline"
@@ -81,7 +81,7 @@
       <button
         type="submit"
         [disabled]="loginForm.invalid"
-        class="w-full cursor-pointer rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 px-6 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:from-purple-400 hover:to-purple-500 hover:shadow-xl focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-70"
+        class="w-full cursor-pointer rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 px-6 py-3 md:py-4 text-sm md:text-base font-semibold text-white shadow-lg transition-all duration-300 hover:from-purple-400 hover:to-purple-500 hover:shadow-xl focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-70"
       >
         {{ "login.signInButton" | translate }}
       </button>
