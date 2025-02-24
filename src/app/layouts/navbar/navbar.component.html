@@ -238,10 +238,11 @@
         class="bg-white rounded-lg shadow-md"
       >
         <ul class="py-2 text-sm text-gray-700">
+          <!-- In the mobile dropdown section -->
           <li>
             <a
               [class.hidden]="currentLang('ar')"
-              (click)="change('ar')"
+              (click)="change('ar'); $event.stopPropagation()"
               class="block px-4 py-2 hover:bg-purple-100 hover:text-purple-600 transition duration-300 cursor-pointer"
             >
               Arabic
@@ -250,7 +251,7 @@
           <li>
             <a
               [class.hidden]="currentLang('en')"
-              (click)="change('en')"
+              (click)="change('en'); $event.stopPropagation()"
               class="block px-4 py-2 hover:bg-purple-100 hover:text-purple-600 transition duration-300 cursor-pointer"
             >
               English
