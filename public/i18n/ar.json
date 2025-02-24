@@ -1,0 +1,122 @@
+{
+    "Home": {
+        "mainSlider": "السلايدر الرئيسي",
+        "popularCategories": "الفئات الشائعة",
+        "popularProducts": "المنتجات الشائعة",
+        "bestSeller": "الأكثر مبيعًا",
+        "addToCart": "أضف إلى السلة",
+        "currency": "جنيه إسترليني",
+        "lang": "اللغة"
+      },
+      "register": {
+    "title": "سجل الآن",
+    "fullName": "الاسم الكامل",
+    "fullNamePlaceholder": "أدخل اسمك الكامل",
+    "email": "عنوان البريد الإلكتروني",
+    "emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "password": "كلمة المرور",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "confirmPasswordPlaceholder": "أكد كلمة المرور",
+    "phone": "رقم الهاتف",
+    "phonePlaceholder": "أدخل رقم هاتفك",
+    "registerButton": "تسجيل",
+    "errors": {
+      "required": "هذا الحقل مطلوب",
+      "nameLength": "يجب أن يكون بين 3 و 20 حرفًا",
+      "validEmail": "أدخل بريدًا إلكترونيًا صالحًا",
+      "validPassword": "أدخل كلمة مرور صالحة",
+      "passwordMismatch": "تأكيد كلمة المرور غير صحيح",
+      "validPhone": "أدخل رقم هاتف صالح"
+    },
+    "success": "تم التسجيل بنجاح!",
+    "errorMessage": "حدث خطأ أثناء التسجيل."
+  },
+  "login": {
+    "title": "تسجيل الدخول الآن",
+    "email": "عنوان البريد الإلكتروني",
+    "emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "password": "كلمة المرور",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "signInButton": "تسجيل الدخول",
+    "registerNow":"سجل الان؟",
+
+    "errors": {
+      "required": "هذا الحقل مطلوب",
+      "validEmail": "أدخل بريدًا إلكترونيًا صالحًا",
+      "validPassword": "أدخل كلمة مرور صالحة"
+    },
+    "success": "تم تسجيل الدخول بنجاح!",
+    "errorMessage": "البريد الإلكتروني أو كلمة المرور غير صحيحة."
+  },
+  
+    "Navbar": {
+      "home": "الرئيسية",
+      "Lang": "اللغة",
+      "products": "المنتجات",
+      "categories": "الفئات",
+      "brands": "العلامات التجارية",
+      "register": "التسجيل",
+      "login": "تسجيل الدخول",
+      "logout": "تسجيل الخروج",
+      "cart": "عربة التسوق",
+      "lang": "اللغة",
+
+      "items": "عنصر"
+    }, "Cart": {
+    "title": "سلة التسوق",
+    "totalPrice": "إجمالي سعر السلة",
+    "currency": "جنيه مصري",
+    "clearCart": "إفراغ السلة",
+    "price": "السعر",
+    "remove": "إزالة",
+    "increase": "زيادة",
+    "decrease": "نقصان",
+    "checkout": "إتمام الشراء"
+  },
+  "POPULAR_CATEGORIES": "الفئات الشائعة",
+
+    "Wishlist": {
+      "heading": "المنتجات المفضلة",
+      "addToCart": "أضف إلى السلة",
+      "emptyState": "قائمة المنتجات المفضلة فارغة."
+    }
+,
+    "GET_APP": "احصل على تطبيق FreshCart",
+    "APP_DESCRIPTION": "سنرسل لك رابطًا. افتحه على هاتفك لتنزيل التطبيق.",
+    "EMAIL_PLACEHOLDER": "أدخل بريدك الإلكتروني",
+    "SHARE_APP_LINK": "مشاركة رابط التطبيق",
+    "PAYMENT_PARTNERS": "شركاء الدفع",
+    "DELIVERY_WITH_FRESHCART": "احصل على التوصيل مع FreshCart",
+    "COPYRIGHT": "© FreshCart. جميع الحقوق محفوظة.",
+    "PRIVACY_POLICY": "سياسة الخصوصية",
+    "TERMS_OF_SERVICE": "شروط الخدمة",
+    "CONTACT_US": "اتصل بنا"
+  ,
+  "Checkout": {
+    "title": "الدفع",
+    "details": "تفاصيل الشحن",
+    "phone": "رقم الهاتف",
+    "city": "المدينة",
+    "payment": "المتابعة إلى الدفع",
+    "detailsRequired": "تفاصيل الشحن مطلوبة.",
+    "phoneRequired": "رقم هاتف صحيح مطلوب.",
+    "cityRequired": "المدينة مطلوبة."
+  },  
+  "PopularBrands": {
+    "heading": "العلامات التجارية الشهيرة",
+    "brandName": "اسم العلامة التجارية",
+    "brandSlug": "الرابط المختصر"
+  },
+  "Product": {
+    "new": "جديد",
+    "price": "السعر",
+    "popularProducts": "المنتجات الشائعة",
+    "addToCart": "أضف إلى السلة",
+    "addToWishlist": "أضف إلى المفضلة",
+    "searchForProduct":"ابحث عن المنتجات"
+
+  }
+}
+  

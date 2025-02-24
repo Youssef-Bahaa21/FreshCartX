@@ -1,0 +1,97 @@
+<section
+  class="bg-gradient-to-br from-purple-950 via-purple-900 to-purple-800 py-16"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Heading -->
+    <h2
+      class="text-4xl md:text-5xl font-bold text-center mb-12 animate-fade-in"
+    >
+      <span
+        class="bg-gradient-to-r from-purple-300 to-purple-100 bg-clip-text text-transparent"
+      >
+        {{ "Wishlist.heading" | translate }}
+      </span>
+      <div
+        class="mt-4 h-1 w-24 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full mx-auto"
+      ></div>
+    </h2>
+
+    <!-- Product Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+      @for (product of data; track $index) {
+      <div
+        class="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-5 hover:-translate-y-2 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 border border-white/10 overflow-hidden"
+      >
+        <!-- Remove Button -->
+        <button
+          (click)="removeFromWishlist(product.id)"
+          class="absolute cursor-pointer top-4 right-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-purple-100 p-2 rounded-full shadow-md transition-all duration-300 z-10"
+        >
+          <i
+            class="fas fa-trash text-sm w-5 h-5 flex items-center justify-center"
+          ></i>
+        </button>
+
+        <!-- Product Details -->
+        <div [routerLink]="['/details', product.id]">
+          <!-- Image Container -->
+          <div class="relative h-56 sm:h-64 w-full rounded-xl overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-purple-600/20 blur-lg opacity-30 group-hover:opacity-50 transition-opacity"
+            ></div>
+            <img
+              [src]="product.imageCover"
+              class="w-full h-full object-contain scale-95 group-hover:scale-100 transition-transform duration-300"
+              [alt]="product.title"
+            />
+          </div>
+
+          <!-- Product Info -->
+          <div class="pt-4 pb-3 px-2 space-y-3">
+            <h4
+              class="text-xs uppercase font-bold bg-gradient-to-r from-purple-500 to-purple-400 bg-clip-text text-transparent"
+            >
+              {{ product.category?.name | uppercase }}
+            </h4>
+            <h3 class="text-lg font-semibold text-gray-100 line-clamp-2">
+              {{ product.title }}
+            </h3>
+            <div class="flex justify-between items-center">
+              <span
+                class="text-xl font-bold bg-gradient-to-r from-purple-300 to-purple-200 bg-clip-text text-transparent"
+              >
+                £{{ product.price }}
+              </span>
+              <div
+                class="flex items-center bg-purple-600/30 px-2 py-1 rounded-full"
+              >
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <span class="text-purple-100 text-sm font-medium ml-1">
+                  {{ product.ratingsAverage }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add to Cart Button -->
+        <button
+          (click)="addToCart(product)"
+          class="cursor-pointer w-full mt-3 bg-gradient-to-br from-purple-500 to-purple-600 hover:from-purple-400 hover:to-purple-500 text-white font-semibold py-2.5 rounded-lg transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-purple-500/30"
+        >
+          {{ "Wishlist.addToCart" | translate }}
+        </button>
+      </div>
+      }
+    </div>
+
+    <!-- Empty State -->
+    <div class="col-span-full text-center mt-12" *ngIf="data.length === 0">
+      <p
+        class="text-xl bg-gradient-to-r from-purple-200 to-purple-100 bg-clip-text text-transparent font-bold"
+      >
+        {{ "Wishlist.emptyState" | translate }}
+      </p>
+    </div>
+  </div>
+</section>

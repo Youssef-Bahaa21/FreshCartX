@@ -1,0 +1,60 @@
+<section class="container mx-auto px-4 py-5">
+  <div
+    class="grid md:grid-cols-[40%_1fr] gap-8 bg-white shadow-xl shadow-purple-800 rounded-3xl p-10 border border-gray-200 transition-shadow duration-500 hover:shadow-2xl"
+  >
+    <!-- Product Image -->
+    <div class="relative w-full overflow-hidden rounded-3xl shadow-lg">
+      <img
+        [src]="productDetails.imageCover"
+        alt="Product Image"
+        class="w-full h-[600px] object-cover rounded-3xl transition-transform duration-700 ease-in-out hover:scale-110"
+      />
+      <span
+        class="absolute top-4 left-4 bg-purple-600 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md animate-pulse"
+      >
+        New
+      </span>
+    </div>
+
+    <!-- Product Details -->
+    <div class="flex flex-col gap-6">
+      <!-- Title -->
+      <h1
+        class="text-4xl font-extrabold text-purple-800 leading-snug transition-all duration-500"
+      >
+        {{ productDetails.title }}
+      </h1>
+
+      <!-- Description -->
+      <p
+        class="text-gray-700 text-lg leading-relaxed transition-opacity duration-500 opacity-90"
+      >
+        {{ productDetails.description }}
+      </p>
+
+      <!-- Price -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-lg font-semibold">
+        <span
+          class="bg-purple-700 text-white px-6 py-3 rounded-full text-xl shadow-lg transition-transform duration-500"
+        >
+          ${{ productDetails.price }}
+        </span>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap gap-4 mt-6">
+        <button
+          (click)="addToCart(productDetails.id)"
+          class="text-white cursor-pointer bg-gradient-to-r from-purple-500 to-purple-700 px-8 py-3 rounded-xl text-lg font-bold shadow-lg transition-all duration-500 hover:bg-purple-800"
+        >
+          Add to Cart
+        </button>
+        <button
+          class="cursor-pointer bg-gray-300 text-gray-800 px-8 py-3 rounded-xl text-lg font-bold shadow-lg transition-all duration-500 hover:bg-gray-400"
+        >
+          Add to Wishlist
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

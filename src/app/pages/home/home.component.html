@@ -1,0 +1,202 @@
+<!-- main-slider -->
+<section class="container mx-auto px-4 py-8" aria-label="Main Slider">
+  <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_30%] gap-6">
+    <div>
+      <owl-carousel-o
+        [options]="customMainSlider"
+        aria-roledescription="carousel"
+      >
+        <ng-template carouselSlide>
+          <div class="relative overflow-hidden rounded-xl shadow-2xl">
+            <img
+              src="images/img1.avif"
+              loading="lazy"
+              alt="Slide 1"
+              class="w-full h-[220px] sm:h-[280px] md:h-[320px] object-cover transition-transform duration-500 hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-purple-600 via-transparent opacity-0 hover:opacity-20 transition-opacity duration-500"
+            ></div>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div
+            class="relative overflow-hidden rounded-xl shadow-purple-600 shadow-2xl"
+          >
+            <img
+              src="images/img2.avif"
+              loading="lazy"
+              alt="Slide 2"
+              class="w-full h-[220px] sm:h-[280px] md:h-[320px] object-cover transition-transform duration-500 hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0 hover:opacity-20 transition-opacity duration-500"
+            ></div>
+          </div>
+        </ng-template>
+        <!-- Repeat similar structure for img3, img4, etc. -->
+      </owl-carousel-o>
+    </div>
+
+    <!-- Side Banners -->
+    <div class="flex flex-col gap-4">
+      <div
+        class="overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-700"
+      >
+        <img
+          src="images/grocery-banner.png"
+          loading="lazy"
+          alt="Grocery Banner"
+          class="w-full h-[120px] sm:h-[140px] md:h-[160px] object-cover"
+        />
+      </div>
+      <div
+        class="overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-purple-700 hover:shadow-2xl"
+      >
+        <img
+          src="images/grocery-banner-2.jpeg"
+          loading="lazy"
+          alt="Grocery Banner 2"
+          class="w-full h-[120px] sm:h-[140px] md:h-[160px] object-cover"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- second-slider -->
+<section class="container mx-auto px-4 py-10" aria-label="Popular Categories">
+  <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 animate-fade-in">
+    {{ "Home.popularCategories" | translate }}
+  </h2>
+  <owl-carousel-o [options]="customOptions" aria-roledescription="carousel">
+    @for (cat of categories(); track cat._id) {
+    <ng-template carouselSlide>
+      <div
+        class="flex flex-col items-center text-center bg-gradient-to-b from-purple-50 to-purple-100 rounded-xl shadow-lg p-5 hover:scale-105 transition-transform duration-300 animate-slide-up"
+        role="listitem"
+      >
+        <div
+          class="overflow-hidden rounded-full shadow-md transition-transform duration-300 hover:scale-110"
+        >
+          <img
+            [src]="cat.image"
+            loading="lazy"
+            class="w-[140px] h-[140px] object-contain"
+            [alt]="cat.name + ' Category Image'"
+          />
+        </div>
+        <h3 class="text-xl font-semibold text-purple-700 mt-4">
+          {{ cat.name }}
+        </h3>
+      </div>
+    </ng-template>
+    }
+  </owl-carousel-o>
+</section>
+
+<!-- products-cards -->
+<section
+  class="bg-gradient-to-br from-purple-950 via-purple-900 to-purple-800 py-16"
+  aria-label="Popular Products"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-1">
+    <h2
+      class="text-4xl md:text-5xl font-extrabold text-center mb-14 animate-fade-in"
+    >
+      <span
+        class="bg-gradient-to-r from-purple-300 to-purple-100 bg-clip-text text-transparent"
+      >
+        {{ "Home.popularProducts" | translate }}
+      </span>
+      <div
+        class="mt-3 h-1.5 w-28 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full mx-auto"
+      ></div>
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      @for (product of products().slice(0,12); track product.id) {
+      <article
+        class="group relative bg-white/5 backdrop-blur-lg rounded-2xl p-5 hover:-translate-y-2 transition-all duration-300 ease-out shadow-2xl hover:shadow-2xl border border-white/10 overflow-hidden"
+        role="article"
+      >
+        <div
+          class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.15)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        ></div>
+
+        <span
+          class="absolute top-4 left-4 bg-gradient-to-br from-purple-500 to-purple-600 text-white px-3 py-1 text-xs font-bold rounded-full shadow-lg z-10"
+        >
+          {{ "Home.bestSeller" | translate }}
+        </span>
+
+        <!-- Wishlist  -->
+        <button
+          type="button"
+          aria-label="Add to Wishlist"
+          class="cursor-pointer absolute top-4 right-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-purple-100 p-2 rounded-full shadow-md transition-all duration-300 z-10 focus:outline-none"
+          (click)="addToWishlist(product.id)"
+        >
+          <i
+            class="fas fa-heart text-sm w-5 h-5 flex items-center justify-center"
+          ></i>
+        </button>
+
+        <div [routerLink]="['/details', product.id]" class="cursor-pointer">
+          <div class="relative h-60 w-full rounded-xl overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-purple-600/20 blur-xl opacity-30 group-hover:opacity-50 transition-opacity"
+            ></div>
+            <img
+              [src]="product.imageCover"
+              loading="lazy"
+              class="w-full h-full object-contain scale-95 group-hover:scale-100 transition-transform duration-300"
+              [alt]="product.title"
+            />
+          </div>
+
+          <!-- Product Info -->
+          <div class="pt-5 pb-4 px-2 space-y-3">
+            <h4
+              class="text-xs uppercase font-bold tracking-wide bg-gradient-to-r from-purple-400 to-purple-300 bg-clip-text text-transparent"
+            >
+              {{ product.category.name | uppercase }}
+            </h4>
+            <h3
+              class="text-lg font-semibold text-gray-100 line-clamp-2 leading-tight"
+            >
+              {{ product.title.split(" ", 2).join(" ") }}
+            </h3>
+
+            <div class="flex justify-between items-center mt-4">
+              <span
+                class="text-xl font-bold bg-gradient-to-r from-purple-300 to-purple-200 bg-clip-text text-transparent"
+              >
+                {{ product.price | currency : "GBP" }}
+              </span>
+              <div
+                class="flex items-center bg-purple-600/30 px-3 py-1 rounded-full"
+              >
+                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <span class="text-purple-100 text-sm font-medium ml-1.5">
+                  {{ product.ratingsAverage }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add to Cart Button -->
+        <button
+          type="button"
+          aria-label="Add to Cart"
+          (click)="addToCart(product.id)"
+          class="cursor-pointer w-full mt-3 bg-gradient-to-br from-purple-500 to-purple-600 hover:from-purple-400 hover:to-purple-500 text-white font-semibold py-3 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-95 shadow-lg hover:shadow-purple-500/30 focus:outline-none relative z-10"
+        >
+          {{ "Home.addToCart" | translate }}
+        </button>
+      </article>
+      }
+    </div>
+  </div>
+</section>

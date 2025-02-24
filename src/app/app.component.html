@@ -1,0 +1,18 @@
+<router-outlet></router-outlet>
+
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.7)"
+  template="
+    <div class='flex flex-col items-center gap-3'>
+      <!-- Logo -->
+      <img class='w-32 animate-bounce' src='/images/freshcart-logo.svg' alt='Loading' />
+
+      <!-- Simple Spinner -->
+      <div class='w-10 h-10 border-4 border-green-500 border-t-transparent rounded-full animate-spin'></div>
+
+      <!-- Loading Text -->
+      <p class='text-green-400 text-lg font-medium'>Loading...</p>
+    </div>
+  "
+>
+</ngx-spinner>

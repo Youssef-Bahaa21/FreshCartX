@@ -1,0 +1,111 @@
+<section
+  class="min-h-screen bg-gradient-to-br from-purple-950 via-purple-900 to-purple-800 flex items-center justify-center p-4"
+>
+  <div
+    class="w-full max-w-md space-y-8 rounded-3xl bg-black/30 backdrop-blur-lg p-10 shadow-2xl shadow-purple-950/40 border border-purple-700/50 transition-all duration-300 hover:shadow-3xl hover:shadow-purple-950/60"
+  >
+    <div class="text-center">
+      <h1
+        class="text-4xl font-extrabold text-transparent bg-gradient-to-r from-purple-300 to-purple-100 bg-clip-text mb-2"
+      >
+        {{ "login.title" | translate }}
+      </h1>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="submitFrom()" class="space-y-6">
+      <div class="space-y-4">
+        <div>
+          @let email=loginForm.get('email');
+          <label class="mb-2 block text-sm font-medium text-purple-200">
+            {{ "login.email" | translate }}
+          </label>
+          <div class="relative">
+            <input
+              formControlName="email"
+              type="email"
+              [placeholder]="'login.emailPlaceholder' | translate"
+              class="w-full rounded-xl border border-purple-600/50 bg-black/40 p-4 text-purple-100 shadow-inner transition-all duration-300 placeholder:text-purple-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20"
+            />
+          </div>
+          @if (email?.errors && email?.touched) {
+          <div class="mt-2 flex items-center gap-1.5 text-sm text-red-500">
+            <span>{{
+              email?.getError("required")
+                ? ("login.errors.required" | translate)
+                : ("login.errors.validEmail" | translate)
+            }}</span>
+          </div>
+          }
+        </div>
+
+        <div>
+          @let password=loginForm.get('password');
+          <label class="mb-2 block text-sm font-medium text-purple-200">
+            {{ "login.password" | translate }}
+          </label>
+          <div class="relative">
+            <input
+              formControlName="password"
+              type="password"
+              [placeholder]="'login.passwordPlaceholder' | translate"
+              class="w-full rounded-xl border border-purple-600/50 bg-black/40 p-4 text-purple-100 shadow-inner transition-all duration-300 placeholder:text-purple-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20"
+            />
+          </div>
+          @if (password?.errors && password?.touched) {
+          <div class="mt-2 flex items-center gap-1.5 text-sm text-red-500">
+            <span>{{
+              password?.getError("required")
+                ? ("login.errors.required" | translate)
+                : ("login.errors.validPassword" | translate)
+            }}</span>
+          </div>
+          }
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between">
+        <a
+          routerLink="/forget"
+          class="text-sm font-medium text-purple-300 transition hover:text-purple-200 hover:underline"
+        >
+          {{ "login.forgotPassword" | translate }}
+        </a>
+        <a
+          routerLink="/register"
+          class="text-sm font-medium text-purple-300 transition hover:text-purple-200 hover:underline"
+        >
+          {{ "login.registerNow" | translate }}
+        </a>
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="loginForm.invalid"
+        class="w-full cursor-pointer rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 px-6 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:from-purple-400 hover:to-purple-500 hover:shadow-xl focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-70"
+      >
+        {{ "login.signInButton" | translate }}
+      </button>
+
+      @if (msgError) {
+      <div
+        class="flex items-center gap-2 rounded-xl bg-red-50/20 p-4 text-sm text-red-400 border border-red-500/30"
+      >
+        <span>{{ "login.errorMessage" | translate }}</span>
+      </div>
+      } @if (Success) {
+      <div
+        class="flex items-center gap-2 rounded-xl bg-green-50/20 p-4 text-sm text-green-400 border border-green-500/30"
+      >
+        <svg class="h-5 w-5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+            clip-rule="evenodd"
+          />
+        </svg>
+        <span>{{ "login.success" | translate }}</span>
+      </div>
+      }
+    </form>
+  </div>
+</section>

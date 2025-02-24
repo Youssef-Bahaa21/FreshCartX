@@ -1,0 +1,89 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+
+@source "../node_modules/flowbite";
+.btn-main {
+  @apply disabled:bg-gray-700 w-full bg-green-600 text-white font-medium py-2.5 rounded-lg hover:bg-green-700 cursor-pointer transition duration-300;
+}
+.section-main {
+  @apply bg-gray-50 rounded border shadow hover:shadow-green-600 p-4 w-[75%] mx-auto;
+}
+
+@layer utilities {
+  .btn-disabled {
+    @apply bg-gray-300 cursor-not-allowed opacity-60;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+/* In your global CSS file */
+@layer utilities {
+  .brand-bg-gradient {
+    @apply bg-gradient-to-r from-[#2A68B0] via-[#3199BC] to-[#71C4DE];
+  }
+
+  .brand-text-primary {
+    @apply text-[#2A68B0];
+  }
+
+  .brand-text-secondary {
+    @apply text-[#3199BC];
+  }
+
+  .brand-text-accent {
+    @apply text-[#71C4DE];
+  }
+
+  .brand-text-light {
+    @apply text-[#8FD8EC];
+  }
+
+  .brand-text-offwhite {
+    @apply text-[#FAF6F6];
+  }
+
+  .brand-bg-primary {
+    @apply bg-[#2A68B0];
+  }
+
+  .brand-bg-secondary {
+    @apply bg-[#3199BC];
+  }
+
+  .brand-bg-accent {
+    @apply bg-[#71C4DE];
+  }
+
+  .brand-bg-light {
+    @apply bg-[#8FD8EC];
+  }
+
+  .brand-bg-offwhite {
+    @apply bg-[#FAF6F6];
+  }
+
+  .brand-border-primary {
+    @apply border-[#2A68B0];
+  }
+
+  .brand-border-secondary {
+    @apply border-[#3199BC];
+  }
+
+  .brand-hover-bg-primary {
+    @apply hover:bg-[#2A68B0];
+  }
+
+  .brand-hover-text-primary {
+    @apply hover:text-[#2A68B0];
+  }
+}

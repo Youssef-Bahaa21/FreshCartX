@@ -1,0 +1,116 @@
+{
+   "Home": {
+    "mainSlider": "Main Slider",
+    "popularCategories": "Popular Categories",
+    "popularProducts": "Popular Products",
+    "bestSeller": "Best Seller",
+    "addToCart": "Add to Cart",
+    "currency": "GBP",
+    "lang": "Language"
+  },
+  "register": {
+    "title": "Register Now",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "Enter your full name",
+    "email": "Email Address",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "phone": "Phone Number",
+    "phonePlaceholder": "Enter your phone number",
+    "registerButton": "Register",
+    "errors": {
+      "required": "Required field",
+      "nameLength": "Must be between 3 and 20 characters",
+      "validEmail": "Enter a valid email",
+      "validPassword": "Enter a valid password",
+      "passwordMismatch": "Password confirmation is incorrect",
+      "validPhone": "Enter a valid phone number"
+    },
+    "success": "Registration successful!",
+    "errorMessage": "An error occurred during registration."
+  },
+  "login": {
+    "title": "Login Now",
+    "email": "Email Address",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "forgotPassword": "Forgot Password?",
+    "signInButton": "Sign In",
+    "errors": {
+      "required": "Required field",
+      "validEmail": "Enter a valid email",
+      "validPassword": "Enter a valid password"
+    },
+    "registerNow":"Sign up?",
+    "success": "Login successful!",
+    "errorMessage": "Invalid email or password."
+  },
+  "POPULAR_CATEGORIES": "Popular Categories",
+    "Navbar": {
+        "home": "Home",
+        "products": "Products",
+        "categories": "Categories",
+        "brands": "Brands",
+        "register": "Register",
+        "login": "Login",
+        "Lang": "Language",
+        "logout": "Logout",
+        "cart": "Cart",
+        "lang": "Language",
+        "items": "items"
+      
+    } ,"Cart": {
+        "title": "Shopping Cart",
+        "totalPrice": "Total Cart Price",
+        "currency": "GBP",
+        "clearCart": "Clear Cart",
+        "price": "Price",
+        "remove": "Remove",
+        "increase": "Increase",
+        "decrease": "Decrease",
+        "checkout": "Check Out"
+      },
+      "Checkout": {
+        "title": "Checkout",
+        "details": "Shipping Details",
+        "phone": "Phone Number",
+        "city": "City",
+        "payment": "Proceed to Payment",
+        "detailsRequired": "Shipping details are required.",
+        "phoneRequired": "A valid phone number is required.",
+        "cityRequired": "City is required."
+      },
+      "Wishlist": {
+        "heading": "Wishlist Products",
+        "addToCart": "Add to Cart",
+        "emptyState": "Your wishlist is empty."
+      },
+      "PopularBrands": {
+        "heading": "Popular Brands",
+        "brandName": "Brand Name",
+        "brandSlug": "Brand Slug"
+      },
+      "Product": {
+        "new": "New",
+        "price": "Price",
+        "addToCart": "Add to Cart",
+        "popularProducts": "Popular Products",
+        "addToWishlist": "Add to Wishlist",
+        "searchForProduct":"Search For Product"
+      },
+      "GET_APP": "Get The FreshCart App",
+      "APP_DESCRIPTION": "We will send you a link. Open it on your phone to download the app.",
+      "EMAIL_PLACEHOLDER": "Enter your email",
+      "SHARE_APP_LINK": "Share App Link",
+      "PAYMENT_PARTNERS": "Payment Partners",
+      "DELIVERY_WITH_FRESHCART": "Get Deliveries with FreshCart",
+      "COPYRIGHT": "© FreshCart. All rights reserved.",
+      "PRIVACY_POLICY": "Privacy Policy",
+      "TERMS_OF_SERVICE": "Terms of Service",
+      "CONTACT_US": "Contact Us"
+  }
+  

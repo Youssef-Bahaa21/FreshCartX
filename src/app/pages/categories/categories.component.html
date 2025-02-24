@@ -1,0 +1,51 @@
+<section
+  class="container mx-auto px-4 sm:px-8 py-16 bg-gradient-to-br from-purple-950 via-purple-900 to-purple-800 rounded-3xl shadow-2xl overflow-hidden"
+>
+  <div class="max-w-7xl mx-auto">
+    <h2
+      class="text-4xl md:text-5xl font-bold mb-12 text-center tracking-tight animate-fade-in bg-gradient-to-r from-purple-300 to-purple-100 bg-clip-text text-transparent"
+    >
+      {{ "POPULAR_CATEGORIES" | translate }}
+      <div
+        class="mt-3 h-1 w-24 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto rounded-full opacity-90"
+      ></div>
+    </h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+      @for (cat of categories; track cat._id) {
+      <div
+        class="group relative flex flex-col items-center text-center bg-gradient-to-b from-purple-100/20 to-white/5 dark:from-purple-900/50 dark:to-purple-800/30 backdrop-blur-md rounded-2xl p-6 transition-transform duration-500 transform hover:-translate-y-3 hover:scale-105 shadow-lg hover:shadow-2xl border border-white/10 overflow-hidden"
+      >
+        <!-- Glow effect -->
+        <div
+          class="absolute inset-0 bg-gradient-radial from-purple-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"
+        ></div>
+
+        <!-- Image container -->
+        <div class="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 mb-4">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl blur-xl opacity-30 group-hover:opacity-60 transition-all duration-500"
+          ></div>
+          <img
+            [src]="cat.image"
+            class="w-full h-full object-cover rounded-2xl border-2 border-purple-300/50 transition-all duration-500 transform scale-95 group-hover:scale-110 group-hover:border-purple-300"
+            alt="{{ cat.name }}"
+          />
+        </div>
+
+        <!-- Category name -->
+        <h3
+          class="mt-2 text-xl font-semibold bg-gradient-to-r from-purple-200 to-purple-300 dark:from-purple-400 dark:to-purple-300 bg-clip-text text-transparent drop-shadow-lg transition-colors duration-500"
+        >
+          {{ cat.name }}
+        </h3>
+
+        <!-- Hover indicator -->
+        <div
+          class="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 w-20 bg-gradient-to-r from-purple-400 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        ></div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
