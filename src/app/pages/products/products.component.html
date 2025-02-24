@@ -2,10 +2,8 @@
   class="bg-gradient-to-br from-purple-950 via-purple-900 to-purple-800 py-16"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Search Input -->
     <form class="max-w-lg mx-auto mb-12 relative">
       <div class="relative group">
-        <!-- Search Icon -->
         <div
           class="absolute inset-y-0 left-4 flex items-center pointer-events-none"
         >
@@ -58,12 +56,10 @@
       <div
         class="group relative bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-5 transform transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-105 shadow-xl hover:shadow-2xl border border-white/10 overflow-hidden"
       >
-        <!-- Enhanced Glow effect -->
         <div
           class="absolute inset-0 bg-gradient-to-br from-purple-500/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         ></div>
 
-        <!-- New badge with pulse animation -->
         <span
           class="absolute top-4 left-4 bg-gradient-to-br from-purple-500 to-purple-600 text-white px-3 py-1 text-xs font-bold rounded-full shadow-lg z-10 animate-pulse-slow"
         >
@@ -79,7 +75,6 @@
         </button>
 
         <div [routerLink]="['/details', product.id]">
-          <!-- Image container with enhanced hover zoom -->
           <div class="relative h-56 sm:h-64 w-full rounded-xl overflow-hidden">
             <div
               class="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-purple-600/20 blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-500"
@@ -91,7 +86,6 @@
             />
           </div>
 
-          <!-- Product info with improved spacing -->
           <div class="pt-4 pb-3 sm:pb-4 px-2 space-y-3">
             <h4
               class="text-xs uppercase font-bold bg-gradient-to-r from-purple-500 to-purple-400 bg-clip-text text-transparent"
@@ -122,7 +116,6 @@
           </div>
         </div>
 
-        <!-- Add to cart button with smooth transition -->
         <button
           (click)="addToCart(product.id)"
           class="cursor-pointer w-full mt-3 bg-gradient-to-br from-purple-500 to-purple-600 hover:from-purple-400 hover:to-purple-500 text-white font-semibold py-2.5 rounded-lg transition-transform duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-purple-500/30"

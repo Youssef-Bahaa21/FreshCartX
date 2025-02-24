@@ -1,4 +1,3 @@
-<!-- Navigation -->
 <nav
   class="bg-gradient-to-r from-purple-700 via-purple-900 to-purple-700 shadow-lg fixed w-full z-50"
   aria-label="Main Navigation"
@@ -6,7 +5,6 @@
   <div
     class="max-w-screen-2xl mx-auto flex items-center justify-between px-4 py-3"
   >
-    <!-- Left Section: Logo + Main Navigation Links -->
     <div class="flex items-center space-x-6">
       <!-- Logo -->
       <a routerLink="/home" class="flex items-center">
@@ -16,7 +14,6 @@
           alt="FreshCart Logo"
         />
       </a>
-      <!-- Main Navigation Links (Desktop) -->
       <div class="hidden md:flex space-x-3">
         @if (isLogin()) {
         <a
@@ -51,9 +48,7 @@
       </div>
     </div>
 
-    <!-- Right Section: Language & User Controls -->
     <div class="flex items-center space-x-4">
-      <!-- Language Dropdown (Desktop) -->
       <div class="hidden md:block relative">
         <button
           id="dropdownHoverButton"
@@ -96,7 +91,7 @@
         </div>
       </div>
 
-      <!-- Authentication/User Controls (Desktop) -->
+      <!-- Authentication-->
       <div class="hidden md:flex items-center space-x-3">
         @if (!isLogin()) {
         <a
@@ -149,7 +144,6 @@
         }
       </div>
 
-      <!-- Mobile Menu Button -->
       <button
         data-collapse-toggle="navbar-mobile"
         type="button"
@@ -177,7 +171,6 @@
     </div>
   </div>
 
-  <!-- Mobile Menu -->
   <div
     [ngClass]="{ block: isMobileMenuOpen, hidden: !isMobileMenuOpen }"
     class="md:hidden bg-gradient-to-r from-purple-700 via-purple-900 to-purple-700"
@@ -215,7 +208,7 @@
       </a>
       }
       <div class="border-t border-purple-500 my-2"></div>
-      <!-- Mobile Language Dropdown -->
+      <!--  Language  -->
       <button
         id="dropdownMobileButton"
         data-dropdown-toggle="dropdownMobile"

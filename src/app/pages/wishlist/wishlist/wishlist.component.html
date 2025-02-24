@@ -2,7 +2,6 @@
   class="bg-gradient-to-br from-purple-950 via-purple-900 to-purple-800 py-16"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Heading -->
     <h2
       class="text-4xl md:text-5xl font-bold text-center mb-12 animate-fade-in"
     >
@@ -32,7 +31,6 @@
           ></i>
         </button>
 
-        <!-- Product Details -->
         <div [routerLink]="['/details', product.id]">
           <!-- Image Container -->
           <div class="relative h-56 sm:h-64 w-full rounded-xl overflow-hidden">
@@ -46,7 +44,6 @@
             />
           </div>
 
-          <!-- Product Info -->
           <div class="pt-4 pb-3 px-2 space-y-3">
             <h4
               class="text-xs uppercase font-bold bg-gradient-to-r from-purple-500 to-purple-400 bg-clip-text text-transparent"
@@ -85,7 +82,6 @@
       }
     </div>
 
-    <!-- Empty State -->
     <div class="col-span-full text-center mt-12" *ngIf="data.length === 0">
       <p
         class="text-xl bg-gradient-to-r from-purple-200 to-purple-100 bg-clip-text text-transparent font-bold"

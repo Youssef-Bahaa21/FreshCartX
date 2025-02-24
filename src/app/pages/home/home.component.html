@@ -34,11 +34,99 @@
             ></div>
           </div>
         </ng-template>
-        <!-- Repeat similar structure for img3, img4, etc. -->
+        <ng-template carouselSlide>
+          <div
+            class="relative overflow-hidden rounded-xl shadow-purple-600 shadow-2xl"
+          >
+            <img
+              src="images/img2.avif"
+              loading="lazy"
+              alt="Slide 2"
+              class="w-full h-[220px] sm:h-[280px] md:h-[320px] object-cover transition-transform duration-500 hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0 hover:opacity-20 transition-opacity duration-500"
+            ></div>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div
+            class="relative overflow-hidden rounded-xl shadow-purple-600 shadow-2xl"
+          >
+            <img
+              src="images/img3.avif"
+              loading="lazy"
+              alt="Slide 2"
+              class="w-full h-[220px] sm:h-[280px] md:h-[320px] object-cover transition-transform duration-500 hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0 hover:opacity-20 transition-opacity duration-500"
+            ></div>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div
+            class="relative overflow-hidden rounded-xl shadow-purple-600 shadow-2xl"
+          >
+            <img
+              src="images/img4.avif"
+              loading="lazy"
+              alt="Slide 2"
+              class="w-full h-[220px] sm:h-[280px] md:h-[320px] object-cover transition-transform duration-500 hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0 hover:opacity-20 transition-opacity duration-500"
+            ></div>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div
+            class="relative overflow-hidden rounded-xl shadow-purple-600 shadow-2xl"
+          >
+            <img
+              src="images/img5.avif"
+              loading="lazy"
+              alt="Slide 2"
+              class="w-full h-[220px] sm:h-[280px] md:h-[320px] object-cover transition-transform duration-500 hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0 hover:opacity-20 transition-opacity duration-500"
+            ></div>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div
+            class="relative overflow-hidden rounded-xl shadow-purple-600 shadow-2xl"
+          >
+            <img
+              src="images/img6.avif"
+              loading="lazy"
+              alt="Slide 2"
+              class="w-full h-[220px] sm:h-[280px] md:h-[320px] object-cover transition-transform duration-500 hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0 hover:opacity-20 transition-opacity duration-500"
+            ></div>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div
+            class="relative overflow-hidden rounded-xl shadow-purple-600 shadow-2xl"
+          >
+            <img
+              src="images/img7.avif"
+              loading="lazy"
+              alt="Slide 2"
+              class="w-full h-[220px] sm:h-[280px] md:h-[320px] object-cover transition-transform duration-500 hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0 hover:opacity-20 transition-opacity duration-500"
+            ></div>
+          </div>
+        </ng-template>
       </owl-carousel-o>
     </div>
 
-    <!-- Side Banners -->
     <div class="flex flex-col gap-4">
       <div
         class="overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-700"
@@ -64,7 +152,6 @@
   </div>
 </section>
 
-<!-- second-slider -->
 <section class="container mx-auto px-4 py-10" aria-label="Popular Categories">
   <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 animate-fade-in">
     {{ "Home.popularCategories" | translate }}
@@ -130,7 +217,6 @@
           {{ "Home.bestSeller" | translate }}
         </span>
 
-        <!-- Wishlist  -->
         <button
           type="button"
           aria-label="Add to Wishlist"
