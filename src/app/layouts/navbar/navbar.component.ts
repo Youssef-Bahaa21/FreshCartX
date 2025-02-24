@@ -66,7 +66,11 @@ export class NavbarComponent implements OnInit {
   }
 
   change(lang: string): void {
+    this.closeAllMenus();
     this.myTranslateService.changeLangTranslate(lang);
+  }
+
+  private closeAllMenus(): void {
     this.isDropdownOpen = false;
     this.isMobileMenuOpen = false;
     this.isMobileDropdownOpen = false;
